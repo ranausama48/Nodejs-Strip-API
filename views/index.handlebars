@@ -1,1 +1,31 @@
-hello Wordl
+<section class="py-2">
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <h1 class="display-3 mt-3 pt-5">
+                Web Development Ebook
+
+            </h1>
+            <p class="lead">
+                Learn Web Developemnet From Fornt To back
+            </p>
+            <form action="/charge" method="POST">
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="pk_test_s3KfGFD230cmUZzCuRFmC2JC00l3doCUS6" data-amount="2500"
+                    data-name="Web Development Ebook" data-description="Ebook Written By Brad Traversy"
+                    data-image="/img/ebook.jpg" data-locale="auto">
+                    </script>
+
+                <script>
+                    document.getElementsByClassName('stripe-button-el')[0]
+                        .style.display = 'none';
+                </script>
+                <button type="submit" class="btn btn-danger btn-lg btn-outline-dark text-white">
+                    Purchase this Books for $2500
+                </button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <img class="img-fluid" width="100%" height="500px" src="/img/ebook.jpg" alt="">
+        </div>
+    </div>
+</section>
