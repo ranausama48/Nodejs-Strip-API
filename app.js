@@ -1,5 +1,5 @@
 const express = require("express");
-const strip = require("strip")("sk_test_ukvFpVbsTfID1wk0zZDyxLdV00x7ZrGX6G");
+const stripe = require("stripe")("sk_test_ukvFpVbsTfID1wk0zZDyxLdV00x7ZrGX6G");
 const bodyParser = require("body-parser");
 const exphbs = require("express-handlebars");
 
@@ -26,7 +26,6 @@ app.get("/", (req, res) => {
 // charge Route
 app.post("/charge", (req, res) => {
   const amount = 2500;
-  console.log(req.body);
   stripe.customers
     .create({
       email: req.body.stripeEmail,
@@ -41,8 +40,9 @@ app.post("/charge", (req, res) => {
       })
     )
     .then(charge => res.render("success"));
+  //   .then(charges => res.render("success"));
 
-  res.send("TEST IS OK");
+  //   res.send("TEST IS OK");
 });
 
 const port = process.env.PORT || 5000;
