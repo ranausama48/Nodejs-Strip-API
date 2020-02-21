@@ -34,15 +34,12 @@ app.post("/charge", (req, res) => {
     .then(customer =>
       stripe.charges.create({
         amount,
-        description: "Web Developement Ebook",
+        description: "Description About Product you want to Sale",
         currency: "usd",
         customer: customer.id
       })
     )
     .then(charge => res.render("success"));
-  //   .then(charges => res.render("success"));
-
-  //   res.send("TEST IS OK");
 });
 
 const port = process.env.PORT || 5000;
